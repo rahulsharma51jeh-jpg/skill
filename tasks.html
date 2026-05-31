@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Board - Infinity Skills</title>
+  <meta name="description" content="Track your learning tasks, assignments, and projects across all skill categories.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-brand">
+      <div class="logo-icon">IS</div>
+      <span>Infinity Skills</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services/skill-development.html">Services</a>
+      <a href="courses.html">Courses</a>
+      <a href="tasks.html" class="active">Tasks</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-signin">&#x1F464; Sign In</button>
+    </div>
+    <button class="mobile-toggle" onclick="toggleMobileMenu()">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services/skill-development.html">Services</a>
+    <a href="courses.html">Courses</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="dashboard.html">Dashboard</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="title-row">
+          <div class="icon-box">&#128203;</div>
+          <h1>Task Board</h1>
+        </div>
+        <p>Track your learning tasks, assignments, and projects</p>
+      </div>
+      <button class="btn-primary" style="padding:0.625rem 1.25rem;font-size:0.85rem;">+ New Task</button>
+    </div>
+
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-card" style="background:linear-gradient(135deg,#eef2ff,#f5f3ff);border-color:#c7d2fe;">
+        <p>Total Tasks</p>
+        <div class="stat-value" style="color:var(--gray-900);">6</div>
+      </div>
+      <div class="stat-card" style="background:linear-gradient(135deg,#dbeafe,#e0f2fe);border-color:#93c5fd;">
+        <p>In Progress</p>
+        <div class="stat-value" style="color:#2563eb;">3</div>
+      </div>
+      <div class="stat-card" style="background:linear-gradient(135deg,#dcfce7,#d1fae5);border-color:#86efac;">
+        <p>Completed</p>
+        <div class="stat-value" style="color:#16a34a;">0</div>
+      </div>
+      <div class="stat-card" style="background:linear-gradient(135deg,#fef9c3,#ffedd5);border-color:#fcd34d;">
+        <p>Overall Progress</p>
+        <div class="stat-value" style="color:#d97706;">35%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TASKS CONTENT -->
+<section class="section" style="padding-top:2rem;">
+  <div class="container">
+    <!-- Filters -->
+    <div class="filters-bar">
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterTasks('all')">&#9638; All Tasks <span class="count">6</span></button>
+        <button class="filter-tab" onclick="filterTasks('todo')">&#9675; To Do <span class="count">3</span></button>
+        <button class="filter-tab" onclick="filterTasks('in-progress')">&#128339; In Progress <span class="count">3</span></button>
+        <button class="filter-tab" onclick="filterTasks('completed')">&#10004; Completed <span class="count">0</span></button>
+      </div>
+      <div class="filter-controls">
+        <select class="filter-select" onchange="filterByCategory(this)">
+          <option value="all">All Categories</option>
+          <option value="skill-development">Skill Development</option>
+          <option value="career-guidance">Career Guidance</option>
+          <option value="entrepreneurship">Entrepreneurship</option>
+          <option value="finance">Finance</option>
+          <option value="art-craft">Art & Craft</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Tasks Grid -->
+    <div class="courses-grid" style="grid-template-columns:repeat(auto-fill,minmax(340px,1fr));">
+
+
+      <!-- Task 1 -->
+      <div class="task-card" data-status="in-progress" data-category="skill-development">
+        <h3>Complete Python Chapter 3 Exercises</h3>
+        <p>Solve all 10 exercises from the Variables & Data Types chapter.</p>
+        <div class="task-badges">
+          <span class="badge badge-high">high</span>
+          <span class="badge badge-in-progress">in progress</span>
+          <span class="badge badge-category">Skill Development</span>
+        </div>
+        <div class="subtask-list">
+          <div class="subtask done"><span class="check">&#10004;</span> Exercise 1-3: Basic Variables</div>
+          <div class="subtask done"><span class="check">&#10004;</span> Exercise 4-6: String Operations</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Exercise 7-8: Lists</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Exercise 9-10: Dictionaries</div>
+        </div>
+        <div class="task-progress">
+          <div class="progress-meta"><span>2/4 completed</span><span>50%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:50%"></div></div>
+        </div>
+        <div class="task-footer">
+          <span>&#128339; Due: Apr 15, 2024</span>
+          <div class="task-tags"><span>#python</span><span>#coding</span></div>
+        </div>
+      </div>
+
+      <!-- Task 2 -->
+      <div class="task-card" data-status="todo" data-category="skill-development">
+        <h3>Prepare Speech for School Competition</h3>
+        <p>Write and practice a 5-minute speech on "Technology and Youth".</p>
+        <div class="task-badges">
+          <span class="badge badge-urgent">urgent</span>
+          <span class="badge badge-todo">to do</span>
+          <span class="badge badge-category">Skill Development</span>
+        </div>
+        <div class="subtask-list">
+          <div class="subtask"><span class="uncheck">&#9675;</span> Research the topic</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Write the speech draft</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Practice delivery (3 times)</div>
+        </div>
+        <div class="task-progress">
+          <div class="progress-meta"><span>0/3 completed</span><span>0%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:0%"></div></div>
+        </div>
+        <div class="task-footer">
+          <span>&#128339; Due: Apr 12, 2024</span>
+          <div class="task-tags"><span>#speaking</span><span>#competition</span></div>
+        </div>
+      </div>
+
+      <!-- Task 3 -->
+      <div class="task-card" data-status="todo" data-category="career-guidance">
+        <h3>Complete Career Assessment Quiz</h3>
+        <p>Take the aptitude test to discover suitable career paths.</p>
+        <div class="task-badges">
+          <span class="badge badge-medium">medium</span>
+          <span class="badge badge-todo">to do</span>
+          <span class="badge badge-category">Career Guidance</span>
+        </div>
+        <div class="subtask-list">
+          <div class="subtask"><span class="uncheck">&#9675;</span> Complete interest inventory</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Complete aptitude test</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Review results with counselor</div>
+        </div>
+        <div class="task-progress">
+          <div class="progress-meta"><span>0/3 completed</span><span>0%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:0%"></div></div>
+        </div>
+        <div class="task-footer">
+          <span>&#128339; Due: Apr 20, 2024</span>
+          <div class="task-tags"><span>#career</span><span>#aptitude</span></div>
+        </div>
+      </div>
+
+
+      <!-- Task 4 -->
+      <div class="task-card" data-status="todo" data-category="entrepreneurship">
+        <h3>Business Plan Draft - Recycled Crafts</h3>
+        <p>Create a one-page business plan for the eco-friendly crafts startup idea.</p>
+        <div class="task-badges">
+          <span class="badge badge-medium">medium</span>
+          <span class="badge badge-todo">to do</span>
+          <span class="badge badge-category">Entrepreneurship</span>
+        </div>
+        <div class="subtask-list">
+          <div class="subtask"><span class="uncheck">&#9675;</span> Define target customers</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> List products/services</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Calculate startup costs</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Write value proposition</div>
+        </div>
+        <div class="task-progress">
+          <div class="progress-meta"><span>0/4 completed</span><span>0%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:0%"></div></div>
+        </div>
+        <div class="task-footer">
+          <span>&#128339; Due: Apr 25, 2024</span>
+          <div class="task-tags"><span>#business</span><span>#startup</span></div>
+        </div>
+      </div>
+
+      <!-- Task 5 -->
+      <div class="task-card" data-status="in-progress" data-category="finance">
+        <h3>Monthly Budget Tracking Exercise</h3>
+        <p>Track all expenses for this month and categorize them.</p>
+        <div class="task-badges">
+          <span class="badge badge-low">low</span>
+          <span class="badge badge-in-progress">in progress</span>
+          <span class="badge badge-category">Finance</span>
+        </div>
+        <div class="subtask-list">
+          <div class="subtask done"><span class="check">&#10004;</span> Set up budget spreadsheet</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Record daily expenses</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Categorize all expenses</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Calculate savings rate</div>
+        </div>
+        <div class="task-progress">
+          <div class="progress-meta"><span>1/4 completed</span><span>25%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:25%"></div></div>
+        </div>
+        <div class="task-footer">
+          <span>&#128339; Due: Apr 30, 2024</span>
+          <div class="task-tags"><span>#finance</span><span>#budget</span></div>
+        </div>
+      </div>
+
+      <!-- Task 6 -->
+      <div class="task-card" data-status="in-progress" data-category="art-craft">
+        <h3>Digital Art Portfolio - 5 Pieces</h3>
+        <p>Create 5 digital art pieces for your portfolio using Canva/Figma.</p>
+        <div class="task-badges">
+          <span class="badge badge-medium">medium</span>
+          <span class="badge badge-in-progress">in progress</span>
+          <span class="badge badge-category">Art & Craft</span>
+        </div>
+        <div class="subtask-list">
+          <div class="subtask done"><span class="check">&#10004;</span> Landscape illustration</div>
+          <div class="subtask done"><span class="check">&#10004;</span> Character design</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Abstract composition</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> Typography poster</div>
+          <div class="subtask"><span class="uncheck">&#9675;</span> UI mockup design</div>
+        </div>
+        <div class="task-progress">
+          <div class="progress-meta"><span>2/5 completed</span><span>40%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:40%"></div></div>
+        </div>
+        <div class="task-footer">
+          <span>&#128339; Due: Apr 28, 2024</span>
+          <div class="task-tags"><span>#art</span><span>#portfolio</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <div style="width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;">IS</div>
+          <span style="font-size:1.25rem;font-weight:700;color:white;">Infinity Skills</span>
+        </div>
+        <p>Empowering students from Class 6-12 with essential skills for the future.</p>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services/skill-development.html">Skill Development</a></li>
+          <li><a href="services/course-guidance.html">Course Guidance</a></li>
+          <li><a href="services/career-guidance.html">Career Guidance</a></li>
+          <li><a href="services/entrepreneurship.html">Entrepreneurship</a></li>
+          <li><a href="services/finance.html">Finance & Money</a></li>
+          <li><a href="services/art-craft.html">Art & Craft</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="courses.html">All Courses</a></li>
+          <li><a href="tasks.html">Task Board</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <ul>
+          <li>&#9993; hello@infinityskills.in</li>
+          <li>&#128222; +91 98765 43210</li>
+          <li>&#128205; Bangalore, Karnataka, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Infinity Skills. All rights reserved.</p>
+      <div style="display:flex;gap:1.5rem;"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

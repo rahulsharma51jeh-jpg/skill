@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Courses - Infinity Skills</title>
+  <meta name="description" content="Explore 168+ courses across skill development, career guidance, entrepreneurship, finance, art & craft for Class 6-12 students.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-brand">
+      <div class="logo-icon">IS</div>
+      <span>Infinity Skills</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services/skill-development.html">Services</a>
+      <a href="courses.html" class="active">Courses</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-signin">&#x1F464; Sign In</button>
+    </div>
+    <button class="mobile-toggle" onclick="toggleMobileMenu()">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services/skill-development.html">Services</a>
+    <a href="courses.html">Courses</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="dashboard.html">Dashboard</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <div class="title-row">
+      <div class="icon-box">&#128218;</div>
+      <h1>All Courses</h1>
+    </div>
+    <p>Explore 168+ courses across all categories</p>
+
+
+    <!-- Search & Filters -->
+    <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <div class="search-box" style="flex:1;min-width:250px;">
+        <span class="search-icon">&#128269;</span>
+        <input type="text" placeholder="Search courses by name, topic, or tag..." oninput="searchCourses(this)">
+      </div>
+      <select class="filter-select" onchange="filterByCategory(this)">
+        <option value="all">All Categories</option>
+        <option value="skill-development">Skill Development</option>
+        <option value="course-guidance">Course Guidance</option>
+        <option value="career-guidance">Career Guidance</option>
+        <option value="entrepreneurship">Entrepreneurship</option>
+        <option value="finance">Finance</option>
+        <option value="art-craft">Art & Craft</option>
+      </select>
+      <select class="filter-select">
+        <option value="all">All Levels</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- COURSES GRID -->
+<section class="section">
+  <div class="container">
+    <p style="font-size:0.85rem;color:var(--gray-500);margin-bottom:1.5rem;">Showing <strong style="color:var(--gray-700);">10</strong> courses</p>
+    <div class="courses-grid">
+
+      <a href="courses.html" class="course-card" data-category="skill-development">
+        <div class="thumbnail">&#128214;<span class="badge-level">Beginner</span><span class="badge-cat">Skill Development</span></div>
+        <div class="content">
+          <h3>Python Programming for Beginners</h3>
+          <p>Start your coding journey with Python. Learn variables, loops, functions, and build real projects.</p>
+          <div class="meta-row"><span>&#128339; 8 weeks</span><span>&#128218; 32 lessons</span><span>&#128101; 1,245</span></div>
+          <div class="footer"><span class="instructor">Dr. Anil Kumar</span><span class="rating">&#11088; 4.8</span></div>
+        </div>
+      </a>
+
+      <a href="courses.html" class="course-card" data-category="skill-development">
+        <div class="thumbnail">&#128214;<span class="badge-level">Beginner</span><span class="badge-cat">Skill Development</span></div>
+        <div class="content">
+          <h3>Public Speaking Mastery</h3>
+          <p>Overcome stage fear and become a confident speaker. Perfect for school presentations and competitions.</p>
+          <div class="meta-row"><span>&#128339; 4 weeks</span><span>&#128218; 16 lessons</span><span>&#128101; 892</span></div>
+          <div class="footer"><span class="instructor">Ms. Priya Sharma</span><span class="rating">&#11088; 4.7</span></div>
+        </div>
+      </a>
+
+      <a href="courses.html" class="course-card" data-category="course-guidance">
+        <div class="thumbnail">&#128214;<span class="badge-level">Beginner</span><span class="badge-cat">Course Guidance</span></div>
+        <div class="content">
+          <h3>Choose Your Stream: Science vs Commerce vs Arts</h3>
+          <p>A comprehensive guide to help you make the right choice after Class 10.</p>
+          <div class="meta-row"><span>&#128339; 2 weeks</span><span>&#128218; 12 lessons</span><span>&#128101; 2,100</span></div>
+          <div class="footer"><span class="instructor">Career Counseling Team</span><span class="rating">&#11088; 4.9</span></div>
+        </div>
+      </a>
+
+
+      <a href="courses.html" class="course-card" data-category="course-guidance">
+        <div class="thumbnail">&#128214;<span class="badge-level">Intermediate</span><span class="badge-cat">Course Guidance</span></div>
+        <div class="content">
+          <h3>JEE/NEET Preparation Roadmap</h3>
+          <p>Strategic planning and resource guidance for competitive exam preparation.</p>
+          <div class="meta-row"><span>&#128339; 6 weeks</span><span>&#128218; 24 lessons</span><span>&#128101; 3,200</span></div>
+          <div class="footer"><span class="instructor">Prof. Rajesh Verma</span><span class="rating">&#11088; 4.6</span></div>
+        </div>
+      </a>
+
+      <a href="courses.html" class="course-card" data-category="career-guidance">
+        <div class="thumbnail">&#128214;<span class="badge-level">Beginner</span><span class="badge-cat">Career Guidance</span></div>
+        <div class="content">
+          <h3>Discover Your Career Path</h3>
+          <p>Explore 50+ career options with real-world insights from industry professionals.</p>
+          <div class="meta-row"><span>&#128339; 3 weeks</span><span>&#128218; 15 lessons</span><span>&#128101; 1,500</span></div>
+          <div class="footer"><span class="instructor">Career Team</span><span class="rating">&#11088; 4.8</span></div>
+        </div>
+      </a>
+
+      <a href="courses.html" class="course-card" data-category="entrepreneurship">
+        <div class="thumbnail">&#128214;<span class="badge-level">Beginner</span><span class="badge-cat">Entrepreneurship</span></div>
+        <div class="content">
+          <h3>Young Entrepreneur Bootcamp</h3>
+          <p>Learn to think like an entrepreneur. Build your first business idea from scratch.</p>
+          <div class="meta-row"><span>&#128339; 6 weeks</span><span>&#128218; 20 lessons</span><span>&#128101; 750</span></div>
+          <div class="footer"><span class="instructor">Mr. Vikram Singh</span><span class="rating">&#11088; 4.7</span></div>
+        </div>
+      </a>
+
+      <a href="courses.html" class="course-card" data-category="finance">
+        <div class="thumbnail">&#128214;<span class="badge-level">Beginner</span><span class="badge-cat">Finance</span></div>
+        <div class="content">
+          <h3>Money Smart: Financial Literacy for Teens</h3>
+          <p>Learn saving, budgeting, and basic investing concepts in a fun and engaging way.</p>
+          <div class="meta-row"><span>&#128339; 4 weeks</span><span>&#128218; 18 lessons</span><span>&#128101; 980</span></div>
+          <div class="footer"><span class="instructor">Ms. Neha Gupta</span><span class="rating">&#11088; 4.5</span></div>
+        </div>
+      </a>
+
+      <a href="courses.html" class="course-card" data-category="art-craft">
+        <div class="thumbnail">&#128214;<span class="badge-level">Beginner</span><span class="badge-cat">Art & Craft</span></div>
+        <div class="content">
+          <h3>Digital Art & Design Fundamentals</h3>
+          <p>Create stunning digital artwork using free tools. From basics to advanced techniques.</p>
+          <div class="meta-row"><span>&#128339; 5 weeks</span><span>&#128218; 22 lessons</span><span>&#128101; 1,100</span></div>
+          <div class="footer"><span class="instructor">Mr. Arjun Patel</span><span class="rating">&#11088; 4.8</span></div>
+        </div>
+      </a>
+
+
+      <a href="courses.html" class="course-card" data-category="skill-development">
+        <div class="thumbnail">&#128214;<span class="badge-level">Intermediate</span><span class="badge-cat">Skill Development</span></div>
+        <div class="content">
+          <h3>Web Development with HTML, CSS & JavaScript</h3>
+          <p>Build real websites from scratch. Perfect project-based learning for young developers.</p>
+          <div class="meta-row"><span>&#128339; 10 weeks</span><span>&#128218; 40 lessons</span><span>&#128101; 2,300</span></div>
+          <div class="footer"><span class="instructor">Mr. Karan Mehta</span><span class="rating">&#11088; 4.9</span></div>
+        </div>
+      </a>
+
+      <a href="courses.html" class="course-card" data-category="art-craft">
+        <div class="thumbnail">&#128214;<span class="badge-level">Beginner</span><span class="badge-cat">Art & Craft</span></div>
+        <div class="content">
+          <h3>Creative Writing Workshop</h3>
+          <p>Develop your writing skills - stories, poems, essays, and blogs.</p>
+          <div class="meta-row"><span>&#128339; 4 weeks</span><span>&#128218; 16 lessons</span><span>&#128101; 670</span></div>
+          <div class="footer"><span class="instructor">Ms. Anita Roy</span><span class="rating">&#11088; 4.6</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <div style="width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;">IS</div>
+          <span style="font-size:1.25rem;font-weight:700;color:white;">Infinity Skills</span>
+        </div>
+        <p>Empowering students from Class 6-12 with essential skills for the future.</p>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services/skill-development.html">Skill Development</a></li>
+          <li><a href="services/course-guidance.html">Course Guidance</a></li>
+          <li><a href="services/career-guidance.html">Career Guidance</a></li>
+          <li><a href="services/entrepreneurship.html">Entrepreneurship</a></li>
+          <li><a href="services/finance.html">Finance & Money</a></li>
+          <li><a href="services/art-craft.html">Art & Craft</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="courses.html">All Courses</a></li>
+          <li><a href="tasks.html">Task Board</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <ul>
+          <li>&#9993; hello@infinityskills.in</li>
+          <li>&#128222; +91 98765 43210</li>
+          <li>&#128205; Bangalore, Karnataka, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Infinity Skills. All rights reserved.</p>
+      <div style="display:flex;gap:1.5rem;"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
